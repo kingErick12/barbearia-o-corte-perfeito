@@ -1,0 +1,94 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // Pode alterar para mysql, sqlite, etc., caso prefira outro banco
+  url      = env("DATABASE_URL")
+}
+
+// Enums conforme especificação
+enum Role {
+  CLIENT
+  ADMIN
+  BARBER
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  CANCELED
+}
+
+// Modelos (Tabelas)
+model User {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(CLIENT)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relacionamentos:
+  // Um usuário pode ter vários agendamentos (como cliente)
+  appointments Appointment[]
+  // Caso o usuário seja um barbeiro, ele terá um perfil referenciado aqui
+  barberProfile Barber?
+}
+
+model Barber {
+  id        String   @id @default(uuid())
+  userId    String   @unique
+  bio       String?
+  avatarUrl String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relacionamentos:
+  // Link direto com o modelo User para aproveitar nome, email, senha e role
+  user         User          @relation(fields: [userId], references: [id])
+  // Um barbeiro possui vários agendamentos
+  appointments Appointment[]
+}
+
+model Service {
+  id              String   @id @default(uuid())
+  name            String
+  description     String?
+  price           Decimal  @db.Decimal(10, 2)
+  durationMinutes Int
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relacionamentos:
+  // Um serviço pode estar em vários agendamentos
+  appointments Appointment[]
+}
+
+model Appointment {
+  id        String            @id @default(uuid())
+  date      DateTime          @db.Date // Salva apenas a data sem horário ex: 2026-03-31
+  startTime String            // Salva o horário no formato HH:mm, ex: "14:00"
+  endTime   String            // Salva o horário no formato HH:mm, ex: "14:30"
+  status    AppointmentStatus @default(PENDING)
+  
+  // Chaves estrangeiras
+  clientId  String
+  barberId  String
+  serviceId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relacionamentos com as referências corretas
+  client  User    @relation(fields: [clientId], references: [id])
+  barber  Barber  @relation(fields: [barberId], references: [id])
+  service Service @relation(fields: [serviceId], references: [id])
+
+  // Validação em BD: Um barbeiro não pode ter múltiplos agendamentos começando na mesma data e hora
+  @@unique([barberId, date, startTime])
+}
