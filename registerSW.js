@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/barbearia-o-corte-perfeito/sw.js', { scope: '/barbearia-o-corte-perfeito/' })})}
