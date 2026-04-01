@@ -10,9 +10,9 @@ const MOCK_SERVICES = [
   { id: 1, name: "Corte Clássico", price: 60, imageUrl: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=600&auto=format&fit=crop" },
   { id: 2, name: "Barba Terapia", price: 40, imageUrl: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=600&auto=format&fit=crop" },
   { id: 3, name: "Combo Imperador", price: 90, imageUrl: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=600&auto=format&fit=crop" },
-  { id: 4, name: "Camuflagem", price: 55, imageUrl: "/images/camuflagem.png" },
-  { id: 5, name: "Limpeza Facial", price: 80, imageUrl: "/images/limpeza.png" },
-  { id: 6, name: "Pai e Filho", price: 110, imageUrl: "/images/pai_filho.png" },
+  { id: 4, name: "Camuflagem", price: 55, imageUrl: `${import.meta.env.BASE_URL}images/camuflagem.png` },
+  { id: 5, name: "Limpeza Facial", price: 80, imageUrl: `${import.meta.env.BASE_URL}images/limpeza.png` },
+  { id: 6, name: "Pai e Filho", price: 110, imageUrl: `${import.meta.env.BASE_URL}images/pai_filho.png` },
 ];
 
 const MOCK_TEAM = [
