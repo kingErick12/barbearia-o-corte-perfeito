@@ -47,7 +47,7 @@ export function AdminLogin() {
                 type="email" 
                 required
                 className="w-full bg-[#111] border border-white/10 rounded-sm py-3 pl-11 pr-4 text-white focus:outline-none focus:border-[var(--color-primary)] transition-colors placeholder:text-gray-700"
-                placeholder="barbeiro@ocorteperfeito.com"
+                placeholder="barbeiro@captainbarbearia.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -79,7 +79,7 @@ export function AdminLogin() {
         </form>
 
         <p className="text-center text-xs text-gray-600 mt-8">
-          Sistema exclusivo para a equipe O Corte Perfeito.
+          Sistema exclusivo para a equipe Captain Barbearia.
         </p>
       </div>
     </div>

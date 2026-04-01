@@ -17,7 +17,7 @@ export function Hero({ onOpenModal }: HeroProps) {
       {/* Content Aligned to Left like the mockup */}
       <div className="relative z-20 px-8 lg:px-24 w-full flex flex-col justify-center animate-fade-in">
         <h2 className="text-[var(--color-primary)] text-3xl md:text-4xl font-serif tracking-widest mb-2 font-bold uppercase drop-shadow-md">
-          O Corte Perfeito.
+          Captain Barbearia.
         </h2>
         
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight max-w-2xl drop-shadow-xl">

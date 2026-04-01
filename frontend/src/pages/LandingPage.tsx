@@ -16,10 +16,8 @@ const MOCK_SERVICES = [
 ];
 
 const MOCK_TEAM = [
-  { id: 1, name: "Roberto", imageUrl: "https://images.unsplash.com/photo-1520283414846-9524dc5567b5?q=80&w=400&auto=format&fit=crop", rating: 5 },
-  { id: 2, name: "Thiago", imageUrl: "https://images.unsplash.com/photo-1554101072-a1f94d930fe3?q=80&w=400&auto=format&fit=crop", rating: 5 },
-  { id: 3, name: "Leo", imageUrl: "https://images.unsplash.com/photo-1588636254190-6421c97a47ef?q=80&w=400&auto=format&fit=crop", rating: 4.8 },
-  { id: 4, name: "Felipe", imageUrl: "https://images.unsplash.com/photo-1622285816962-d27806ce59fd?q=80&w=400&auto=format&fit=crop", rating: 5 },
+  { id: 1, name: "Menot", imageUrl: "https://images.unsplash.com/photo-1520283414846-9524dc5567b5?q=80&w=400&auto=format&fit=crop", rating: 5 },
+  { id: 2, name: "Pedro", imageUrl: "https://images.unsplash.com/photo-1554101072-a1f94d930fe3?q=80&w=400&auto=format&fit=crop", rating: 5 },
 ];
 
 export function LandingPage() {

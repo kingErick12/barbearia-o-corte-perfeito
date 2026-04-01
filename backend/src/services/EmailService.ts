@@ -27,13 +27,13 @@ export const EmailService = {
     const formattedDate = new Date(date).toLocaleDateString('pt-BR', { timeZone: 'UTC' });
     
     const mailOptions = {
-      from: '"O Corte Perfeito" <sistema@ocorteperfeito.com.br>',
+      from: '"Captain Barbearia" <sistema@captainbarbearia.com.br>',
       to: barberEmail, // Vai para o e-mail do Barbeiro cadastrado no banco!
       subject: `🚨 Novo Agendamento: ${clientName} - ${formattedDate} às ${startTime}`,
       html: `
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
           <div style="background-color: #0a0a0a; color: #D4AF37; padding: 20px; text-align: center;">
-            <h1 style="margin: 0; font-size: 24px; font-family: Georgia, serif; text-transform: uppercase; letter-spacing: 2px;">O Corte Perfeito</h1>
+            <h1 style="margin: 0; font-size: 24px; font-family: Georgia, serif; text-transform: uppercase; letter-spacing: 2px;">Captain Barbearia</h1>
           </div>
           <div style="padding: 30px; background-color: #f9f9f9;">
             <h2 style="margin-top: 0; color: #111;">Olá, ${barberName}!</h2>

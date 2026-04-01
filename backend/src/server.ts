@@ -10,7 +10,7 @@ app.use(express.json()); // Permite ler o corpo das requisições em JSON
 // Rota inicial de Health Check
 app.get('/', (req, res) => {
   res.json({
-    message: 'API O Corte Perfeito está rodando com sucesso! 🚀',
+    message: 'API Captain Barbearia está rodando com sucesso! 🚀',
     version: '1.0.0'
   });
 });

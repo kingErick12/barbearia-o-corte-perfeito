@@ -19,8 +19,8 @@ const MOCK_MODAL_SERVICES = [
 ];
 
 const MOCK_BARBERS = [
-  { id: '1', name: 'Roberto' },
-  { id: '2', name: 'Thiago' },
+  { id: '1', name: 'Menot' },
+  { id: '2', name: 'Pedro' },
 ];
 
 export function BookingModal({ isOpen, onClose }: BookingModalProps) {

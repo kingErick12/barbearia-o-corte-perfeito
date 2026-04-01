@@ -8,7 +8,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
       {/* Logo */}
       <a href="#" className="flex flex-col items-center cursor-pointer">
         <h1 className="text-2xl font-serif font-bold text-white tracking-wider uppercase">
-          O Corte Perfeito
+          Captain Barbearia
         </h1>
         <div className="flex items-center space-x-2 mt-1">
           <span className="h-[1px] w-4 bg-[var(--color-primary)]"></span>

@@ -4,10 +4,10 @@ import { LogOut, Calendar, Users, Scissors } from 'lucide-react';
 
 // Dados MOCK para visualização do fluxo antes da API real estar ligada
 const MOCK_APPOINTMENTS = [
-  { id: 1, clientName: 'Carlos Silva', service: 'Corte Clássico', time: '14:00', barber: 'Roberto', status: 'CONFIRMED' },
-  { id: 2, clientName: 'Marcos Paulo', service: 'Barba Terapia', time: '14:45', barber: 'Roberto', status: 'CONFIRMED' },
-  { id: 3, clientName: 'Rafael Gomes', service: 'Combo Imperador', time: '15:30', barber: 'Thiago', status: 'CONFIRMED' },
-  { id: 4, clientName: 'João Pedro', service: 'Limpeza Facial', time: '17:00', barber: 'Roberto', status: 'PENDING' },
+  { id: 1, clientName: 'Carlos Silva', service: 'Corte Clássico', time: '14:00', barber: 'Menot', status: 'CONFIRMED' },
+  { id: 2, clientName: 'Marcos Paulo', service: 'Barba Terapia', time: '14:45', barber: 'Menot', status: 'CONFIRMED' },
+  { id: 3, clientName: 'Rafael Gomes', service: 'Combo Imperador', time: '15:30', barber: 'Pedro', status: 'CONFIRMED' },
+  { id: 4, clientName: 'João Pedro', service: 'Limpeza Facial', time: '17:00', barber: 'Menot', status: 'PENDING' },
 ];
 
 export function AdminDashboard() {
@@ -26,10 +26,10 @@ export function AdminDashboard() {
     navigate('/admin');
   };
 
-  // Se for Barbeiro comum, vê só os agendamentos do 'Roberto' (exemplo mockado)
+  // Se for Barbeiro comum, vê só os agendamentos do 'Menot' (exemplo mockado)
   const visibleAppointments = role === 'ADMIN' 
     ? MOCK_APPOINTMENTS 
-    : MOCK_APPOINTMENTS.filter(a => a.barber === 'Roberto');
+    : MOCK_APPOINTMENTS.filter(a => a.barber === 'Menot');
 
   return (
     <div className="min-h-screen bg-[var(--color-surface)] text-white">
@@ -37,7 +37,7 @@ export function AdminDashboard() {
       <nav className="bg-[#0a0a0a] border-b border-white/5 py-4 px-8 flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <h1 className="text-xl font-serif font-bold text-[var(--color-primary)] uppercase tracking-wider">
-            O Corte Perfeito <span className="text-white ml-2 text-sm">| Portal da Equipe</span>
+            Captain Barbearia <span className="text-white ml-2 text-sm">| Portal da Equipe</span>
           </h1>
         </div>
         
