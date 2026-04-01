@@ -7,6 +7,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
     <nav className="fixed top-0 w-full z-40 px-8 lg:px-24 py-6 flex flex-col md:flex-row justify-between items-center bg-[#0a0a0a] border-b border-white/5 shadow-md">
       {/* Logo */}
       <a href="#" className="flex flex-col items-center cursor-pointer">
+        <img src="/logo.png" alt="Captain Barbearia Logo" className="h-14 w-14 mb-2 rounded-full border-2 border-[var(--color-primary)] shadow-[0_0_15px_rgba(212,175,55,0.3)] object-cover" />
         <h1 className="text-2xl font-serif font-bold text-white tracking-wider uppercase">
           Captain Barbearia
         </h1>
