@@ -23,33 +23,28 @@ export default defineConfig({
         scope: '/barbearia-o-corte-perfeito/',
         icons: [
           {
-            src: 'logo.png',
+            src: '/barbearia-o-corte-perfeito/logo.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any'
           },
           {
-            src: 'logo.png',
+            src: '/barbearia-o-corte-perfeito/logo.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'maskable'
           },
           {
-            src: 'logo.png',
+            src: '/barbearia-o-corte-perfeito/logo.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any'
           },
           {
-            src: 'logo.png',
+            src: '/barbearia-o-corte-perfeito/logo.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable'
-          },
-          {
-            src: 'logo.png',
-            sizes: '180x180',
-            type: 'image/png'
           }
         ]
       }
