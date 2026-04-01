@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { LogOut, Calendar, Users, Scissors } from 'lucide-react';
 
 // Dados MOCK para visualização do fluxo antes da API real estar ligada
-const MOCK_APPOINTMENTS = [
+const INITIAL_APPOINTMENTS = [
   { id: 1, clientName: 'Carlos Silva', service: 'Corte Clássico', time: '14:00', barber: 'Menot', status: 'CONFIRMED' },
   { id: 2, clientName: 'Marcos Paulo', service: 'Barba Terapia', time: '14:45', barber: 'Menot', status: 'CONFIRMED' },
   { id: 3, clientName: 'Rafael Gomes', service: 'Combo Imperador', time: '15:30', barber: 'Pedro', status: 'CONFIRMED' },
@@ -12,6 +12,7 @@ const MOCK_APPOINTMENTS = [
 
 export function AdminDashboard() {
   const [role] = useState<string | null>(() => localStorage.getItem('role'));
+  const [appointments, setAppointments] = useState(INITIAL_APPOINTMENTS);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,8 +29,14 @@ export function AdminDashboard() {
 
   // Se for Barbeiro comum, vê só os agendamentos do 'Menot' (exemplo mockado)
   const visibleAppointments = role === 'ADMIN' 
-    ? MOCK_APPOINTMENTS 
-    : MOCK_APPOINTMENTS.filter(a => a.barber === 'Menot');
+    ? appointments 
+    : appointments.filter(a => a.barber === 'Menot');
+
+  const handleStatusChange = (id: number, newStatus: string) => {
+    setAppointments(prev => prev.map(apt => 
+      apt.id === id ? { ...apt, status: newStatus } : apt
+    ));
+  };
 
   return (
     <div className="min-h-screen bg-[var(--color-surface)] text-white">
@@ -108,7 +115,7 @@ export function AdminDashboard() {
                   <th className="p-4 font-normal">Serviço</th>
                   {role === 'ADMIN' && <th className="p-4 font-normal">Barbeiro</th>}
                   <th className="p-4 font-normal">Status</th>
-                  <th className="p-4 font-normal text-right">Ação</th>
+                  <th className="p-4 font-normal text-center">Ações</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
@@ -119,16 +126,37 @@ export function AdminDashboard() {
                     <td className="p-4 text-gray-300">{apt.service}</td>
                     {role === 'ADMIN' && <td className="p-4 text-gray-400">{apt.barber}</td>}
                     <td className="p-4">
-                      <span className={`px-3 py-1 text-xs rounded-full ${
-                        apt.status === 'CONFIRMED' ? 'bg-green-500/10 text-green-400' : 'bg-yellow-500/10 text-yellow-400'
+                      <span className={`px-3 py-1 text-xs rounded-full whitespace-nowrap ${
+                        apt.status === 'CONFIRMED' ? 'bg-green-500/10 text-green-400' : 
+                        apt.status === 'CANCELED' ? 'bg-red-500/10 text-red-400' :
+                        'bg-yellow-500/10 text-yellow-400'
                       }`}>
-                        {apt.status === 'CONFIRMED' ? 'Confirmado' : 'Aguardando'}
+                        {apt.status === 'CONFIRMED' ? 'Confirmado' : 
+                         apt.status === 'CANCELED' ? 'Cancelado' : 'Aguardando'}
                       </span>
                     </td>
-                    <td className="p-4 text-right">
-                      <button className="text-xs uppercase tracking-wider text-[var(--color-textSc)] hover:text-white transition-colors">
-                        Detalhes
-                      </button>
+                    <td className="p-4">
+                      <div className="flex items-center justify-center space-x-2">
+                        {apt.status === 'PENDING' && (
+                          <>
+                            <button 
+                              onClick={() => handleStatusChange(apt.id, 'CONFIRMED')}
+                              className="px-3 py-1 bg-green-600/20 text-green-400 hover:bg-green-600/40 rounded-sm text-[10px] uppercase tracking-tighter font-bold transition-all"
+                            >
+                              Confirmar
+                            </button>
+                            <button 
+                              onClick={() => handleStatusChange(apt.id, 'CANCELED')}
+                              className="px-3 py-1 bg-red-600/20 text-red-400 hover:bg-red-600/40 rounded-sm text-[10px] uppercase tracking-tighter font-bold transition-all"
+                            >
+                              Recusar
+                            </button>
+                          </>
+                        )}
+                        {apt.status !== 'PENDING' && (
+                          <span className="text-[10px] text-gray-600 uppercase tracking-widest">Concluído</span>
+                        )}
+                      </div>
                     </td>
                   </tr>
                 ))}
