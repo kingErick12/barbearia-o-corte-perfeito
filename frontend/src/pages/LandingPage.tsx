@@ -67,6 +67,26 @@ export function LandingPage() {
         </div>
       </section>
 
+      {/* Footer / Criador */}
+      <footer className="bg-[#050505] py-12 px-8 border-t border-[var(--color-primary)]/20 text-center">
+        <div className="max-w-4xl mx-auto flex flex-col items-center justify-center space-y-4">
+          <p className="text-[var(--color-textSc)] text-sm font-medium tracking-wide">
+            Desenvolvido com excelência por <strong className="text-[var(--color-primary)] text-base">Erick</strong>
+          </p>
+          <div className="flex space-x-6 mt-2">
+            <a href="https://instagram.com/kingErick12" target="_blank" rel="noopener noreferrer" className="text-[var(--color-textSc)] hover:text-[var(--color-primary)] transition-colors transform hover:scale-110">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://linkedin.com/in/kingErick12" target="_blank" rel="noopener noreferrer" className="text-[var(--color-textSc)] hover:text-[var(--color-primary)] transition-colors transform hover:scale-110">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+          <p className="text-white/30 text-xs mt-6">
+            © {new Date().getFullYear()} Captain Barbearia. Todos os direitos reservados.
+          </p>
+        </div>
+      </footer>
+
       <BookingModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
