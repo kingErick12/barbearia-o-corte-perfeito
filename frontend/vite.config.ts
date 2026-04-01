@@ -19,6 +19,8 @@ export default defineConfig({
         theme_color: '#0a0a0a',
         background_color: '#0a0a0a',
         display: 'standalone',
+        start_url: '/barbearia-o-corte-perfeito/',
+        scope: '/barbearia-o-corte-perfeito/',
         icons: [
           {
             src: 'logo.png',
@@ -31,6 +33,11 @@ export default defineConfig({
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'
+          },
+          {
+            src: 'logo.png',
+            sizes: '180x180',
+            type: 'image/png'
           }
         ]
       }

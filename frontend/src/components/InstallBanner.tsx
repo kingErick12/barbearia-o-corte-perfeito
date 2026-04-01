@@ -79,9 +79,15 @@ export function InstallBanner() {
             </p>
 
             {platform === 'ios' ? (
-              <div className="flex items-center space-x-2 text-[var(--color-primary)] font-bold text-[10px] uppercase tracking-widest bg-[var(--color-primary)]/5 p-2 rounded-lg border border-[var(--color-primary)]/10">
-                <Share size={14} className="animate-bounce" />
-                <span>Clique em "Compartilhar" e "Tela de Início"</span>
+              <div className="flex flex-col space-y-2">
+                <div className="flex items-center space-x-2 text-[var(--color-primary)] font-bold text-[10px] uppercase tracking-widest bg-[var(--color-primary)]/5 p-2 rounded-lg border border-[var(--color-primary)]/10">
+                  <Share size={14} className="animate-bounce" />
+                  <span>Clique em "Compartilhar" e "Tela de Início"</span>
+                </div>
+                {/* Alerta de Safari */}
+                <p className="text-[8px] text-gray-500 text-center uppercase tracking-tighter">
+                  Nota: No iPhone, a instalação só funciona pelo navegador <span className="text-white font-bold underline">Safari</span>.
+                </p>
               </div>
             ) : (
               <button 
