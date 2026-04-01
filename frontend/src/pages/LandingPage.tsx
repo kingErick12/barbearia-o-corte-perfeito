@@ -31,9 +31,9 @@ export function LandingPage() {
       
       <section id="servicos" className="min-h-screen pt-32 pb-24 px-8 lg:px-24 bg-[var(--color-surface)]">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white font-serif tracking-wide">Nossos Serviços</h2>
-          <div className="h-1 w-16 bg-[var(--color-primary)] mx-auto mt-4 rounded-full"></div>
-          <p className="text-[var(--color-textSc)] max-w-xl mx-auto mt-6">Escolha o serviço perfeito. Nossa equipe é mestre em tesoura, navalha e máquina.</p>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 text-white font-serif tracking-wide">Nossos Serviços</h2>
+          <div className="h-2 w-20 bg-[var(--color-primary)] mx-auto mt-4 rounded-full"></div>
+          <p className="text-[var(--color-textSc)] text-lg md:text-xl max-w-xl mx-auto mt-6">Escolha o serviço perfeito. Nossa equipe é mestre em tesoura, navalha e máquina.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -50,9 +50,9 @@ export function LandingPage() {
 
       <section id="equipe" className="min-h-screen pt-32 pb-24 px-8 lg:px-24 bg-[var(--color-surface)]">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white font-serif tracking-wide">Nossa Equipe</h2>
-          <div className="h-1 w-16 bg-[var(--color-primary)] mx-auto mt-4 rounded-full"></div>
-          <p className="text-[var(--color-textSc)] max-w-xl mx-auto mt-6">Conheça nossos especialistas formados na velha e nova escola da barbearia.</p>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 text-white font-serif tracking-wide">Nossa Equipe</h2>
+          <div className="h-2 w-20 bg-[var(--color-primary)] mx-auto mt-4 rounded-full"></div>
+          <p className="text-[var(--color-textSc)] text-lg md:text-xl max-w-xl mx-auto mt-6">Conheça nossos especialistas formados na velha e nova escola da barbearia.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">

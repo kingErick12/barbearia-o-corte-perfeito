@@ -37,7 +37,7 @@
 }
 
 @utility btn-gold {
-  @apply bg-primary hover:bg-secondary text-background font-bold py-3 px-8 rounded flex items-center justify-center transition-all duration-300 shadow-lg cursor-pointer;
+  @apply bg-primary hover:bg-secondary text-background font-bold py-4 px-10 text-lg md:text-xl rounded flex items-center justify-center transition-all duration-300 shadow-lg cursor-pointer;
   box-shadow: 0 10px 15px -3px rgba(212, 175, 55, 0.2), 0 4px 6px -4px rgba(212, 175, 55, 0.1);
 
   &:hover {
