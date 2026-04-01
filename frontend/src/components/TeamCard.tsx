@@ -8,14 +8,14 @@ export interface BarberProps {
 export function TeamCard({ name, imageUrl, rating }: BarberProps) {
   return (
     <div className="bg-[#111] px-6 py-8 rounded-lg text-center border border-white/5 flex flex-col items-center">
-      <div className="w-32 h-32 mb-6 rounded-full overflow-hidden border-2 border-[var(--color-primary)]/50 p-1">
+      <div className="w-48 h-48 mb-6 rounded-full overflow-hidden border-2 border-[var(--color-primary)]/50 p-1">
         <img 
           src={imageUrl} 
           alt={name} 
           className="w-full h-full object-cover rounded-full" 
         />
       </div>
-      <h3 className="text-xl font-bold text-white mb-2">{name}</h3>
+      <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{name}</h3>
       <div className="flex space-x-1 items-center justify-center">
         {/* Simple mock stars based on rating */}
         {[...Array(5)].map((_, i) => (
