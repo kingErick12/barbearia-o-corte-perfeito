@@ -10,7 +10,8 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'logo.png'],
+      injectRegister: 'auto',
+      includeAssets: ['favicon.svg', 'logo.png', 'apple-touch-icon.png'],
       manifest: {
         name: 'Captain Barbearia',
         short_name: 'Captain',
